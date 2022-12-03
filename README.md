@@ -1,5 +1,5 @@
 # Django_ToDo_App
-A To-Do task keeper web app has been created using Django and SqlLite.
+A To-Do task keeper web app has been created using Django and Sqlite.
 
 I have implemented CRUD functionality and User Authentication and Authorization.
 
