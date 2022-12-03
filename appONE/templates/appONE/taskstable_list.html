@@ -1,0 +1,49 @@
+{% extends 'appONE/base.html' %}
+{% block content %}
+<!-- header style same for each page -->
+<div class="header-bar">
+    <div>
+        <h1>Hello, {{user|title}}</h1>
+        <h3 style="margin:0">You have <i>{{count}}</i> incomplete task{{ count|pluralize:"s" }}</h3>
+    </div>
+
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
+
+<!-- search functionality: -->
+<div id="search-add-wrapper">
+    <form action="" method="GET" style="display: flex;">
+        <input type="text" name="search-area" value="{{search_input}}" placeholder="Search your task">
+        &nbsp;
+        <input type="submit" value="Search" class="button">
+    </form>
+    {% if tasks|length > 0 %}
+    <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+    {% endif %}
+</div>
+
+<!-- list of tasks -->
+<div id="tasklist" class="task-items-wrapper">
+    {% for task in tasks %}
+    <div class="task-wrapper">
+        <div class="task-title">
+            {% if task.completed %}
+            <div class="task-complete-icon"></div>
+            <i><s><a href="{% url 'task-edit' task.id %}">{{task}}</a></s></i> {% else %}
+            <div class="task-incomplete-icon"></div>
+            <a href="{% url 'task-edit' task.id %}">{{task}}</a> {% endif %}
+        </div>
+        <div class="task-controls">
+            <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;&nbsp;&nbsp;</a>
+        </div>
+    </div>
+
+    {% empty %}
+    <div style="text-align: center; padding-bottom: 10px; line-height: 1em; border-top: 1px solid #dfe4ea;">
+        <h3>No task found!</h3>
+        <h3><a style="text-decoration: none; color: #e53935;" href="{% url 'task-create' %}">Create a new task.</a></h3>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

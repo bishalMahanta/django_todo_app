@@ -1,0 +1,20 @@
+{% extends 'appONE/base.html' %} {% block content %}
+<!-- header part -->
+<div class="header-bar">
+  <a href="{% url 'tasks-list' %}">&#8592;&nbsp; Go Back</a>
+</div>
+<!-- confirm delete -->
+<div class="card-body">
+  <form method="POST">
+    {% csrf_token %}
+    <p>Are your sure you want to delete this task?</p>
+    <h2
+      style="display: flex; justify-content: center; color: rgb(175, 112, 212)"
+    >
+      {{task}}
+    </h2>
+    <input class="button" type="submit" value="Yes" />
+  </form>
+</div>
+
+{% endblock content %}

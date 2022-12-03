@@ -1,0 +1,28 @@
+{% extends 'appONE/base.html' %}
+{% block content %}
+<!-- header part -->
+<div class="header-bar">
+    <h1>Login</h1>
+</div>
+
+<!-- main login form -->
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        
+        {% if form.errors %}
+            <span style="text-decoration: none; color: #e53935;" > <i>Error: </i> Check Username & Password!</span>
+        {% endif %}
+            
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+
+        <label>{{form.password.label}}</label>
+        {{form.password}}
+        
+        <input style="margin-top:10px ;" class="button" type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Register</a></p>
+</div>
+
+{% endblock content %}

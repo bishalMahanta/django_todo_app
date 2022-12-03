@@ -1,0 +1,34 @@
+{% extends 'appONE/base.html' %}
+{% block content %}
+<!-- header part -->
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+
+<!-- reg. from customize -->
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {% for i in form.errors %}            
+            {% if i == 'username' %}
+                <span style="text-decoration: none; color: #e53935;" ><i>Error: </i> User Exists!</span>
+           
+            {% else %}
+                <span style="text-decoration: none; color: #e53935;" ><i>Error: </i> Check Password!</span>
+                
+            {% endif %}                
+        {% endfor %}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+
+{% endblock content %}
