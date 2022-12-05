@@ -7,4 +7,3 @@ I have used HTML and CSS with Django Template Language to genarate Front-end.
 
 "My notes while building this app" Folder contains some files, that I have created to explain some of the working functionality of some django concept, which I feel
 useful to know.
-# django_todo_app
