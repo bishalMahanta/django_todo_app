@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-jg_l4ltl*$f2r_fq89u=20=2vb2wq11obuf9%(v^n8bwj#hi@j
 
 # ALLOWED_HOSTS = []
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -132,5 +132,5 @@ LOGIN_URL = "login"
 
 # for railway deployment
 
-CSRF_TRUSTED_ORIGINS = ['https://djangotodoapp-production.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://djangotodoapp-production.up.railway.app']
 
