@@ -136,9 +136,4 @@ LOGIN_URL = "login"
 
 # for railway deployment
 
-<<<<<<< HEAD
 CSRF_TRUSTED_ORIGINS = ["https://djangotodoapp-production.up.railway.app"]
-=======
-CSRF_TRUSTED_ORIGINS = ['https://djangotodoapp-production.up.railway.app']
-
->>>>>>> 9e72c8d99a8ed384c3bc34a986e2d05a3ed49104
