@@ -42,3 +42,4 @@ tzdata==2022.5
 urllib3==1.26.9
 wcwidth==0.2.5
 Werkzeug==2.2.2
+whitenoise==6.2.0
